@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: venusta;
+	src: url("../venusta.regular.ttf");
+}
+
+body{
+	/* code for 2 half page colors
+background: linear-gradient(
+  to bottom,
+  var(--bg1) 0%,
+  var(--bg2) 90%,
+  var(--bg1) 90%,
+  var(--bg1) 100%); */
+
+ background-image: url("../images/space.gif"); 
+ background-repeat: no-repeat;
+ background-size: 100% 85%;
+ background-position: top; /* to specify the direction of half image*/
+	height: 80vh;
+}
+.blur-content {
+  filter: blur(5px)
+}
+
+
+/* CARD FLIP STYLE */
+
+.card-inner {
+	transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+.card-inner:hover {
+  transform: rotateY(180deg);
+}
+.card-back {
+	position: absolute; 
+	top: 0; 
+	left: 0;
+	right: 0;
+	bottom: 0; 
+	display: flex; 
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	transform-style: preserve-3d;
+  transform: rotateY(180deg);
+	backface-visibility: hidden;
+}
+.card-front {
+  transform-style: preserve-3d;
+	backface-visibility: hidden;
+}
